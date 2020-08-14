@@ -10,6 +10,11 @@ module Spree
     preference :min_value_without_tax, :decimal, default: 0.0
     preference :tax_value_per_months, :hash, default: {}
     preference :webhook, :string, default: "#{Rails.application.routes.default_url_options[:host]}/iugu_webhook"
+    preference :provider_class, :string, default: "ActiveMerchant::Billing::IuguGateway"
+
+    def provider_class
+      preferred_provider_class.constantize
+    end
 
     def authorize(amount, source, gateway_options = {})
       Iugu.api_key = preferred_api_key
