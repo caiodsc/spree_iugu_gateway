@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_iugu_gateway'
-  s.version     = '0.0.1'
+  s.version     = '0.0.2'
   s.summary     = 'Adds a Iugu as a Gateway to Spree Commerce'
   s.description = s.summary
   s.required_ruby_version = '>= 2.1.0'
